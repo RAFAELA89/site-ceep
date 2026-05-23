@@ -246,3 +246,131 @@ do conteúdo ou apareça no fim*/
     color: #666;
     line-height: 1.5;
 }
+
+ .grid-detalhes {
+        grid-template-columns: 1fr; /* Força uma única coluna */
+    }
+    
+    .logo-container strong {
+        font-size: 0.9rem; /* Diminui o texto do CEEP para caber */
+    }
+
+/* Ajustes para telas menores (Celulares) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Empilha logo e botão */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    .btn-matricula {
+        width: 100%; /* Botão ocupa a largura toda no celular */
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+
+/*página integrado*/
+.secao-lista-cursos{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.bloco-modalidade {
+    margin-bottom: 60px;
+}
+.titulo-modalidade {
+    text-align: center;
+    margin-bottom: 35px;
+    
+}
+.titulo-modalidade h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.titulo-modalidade.integrado h2 {
+   color: var(--vermelho-ceep);
+}
+.titulo-modalidade.integrado p {
+   color: var(--texto);
+   font-size: 1.05rem;
+}
+.grid-cursos-detalhes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.card-curso-item{
+    background: white;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3 ease;
+}
+
+.card-curso-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--vermelho-ceep);
+}
+
+.integrado-border i{
+    color: var(--vermelho-ceep);
+}
+.card-curso-item i{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.card-curso-item h3 {
+   font-size: 1.25rem;
+   color: #333;
+   margin-bottom: 12px;
+}
+
+.card-curso-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-curso-item.integrado-border:hover {
+    border-top: 4px solid var(--vermelho-ceep);
+}
+/**Regras de reponsividadae (media queries)*/
+@media (max-width: 768px) {
+    .secao-lista-cursos {
+        padding: 30px 15px;
+    }
+    .titulo-modalidade h2 {
+        font-size: 1.6rem;
+    }
+    .titulo-modalidade p {
+        font-size: 0.95rem;
+    }
+    .grid-cursos-detalhes{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+}
+    @media (max-width: 480px) {
+        .grid-cursos-detalhes {
+            grid-template-columns: 1fr;
+        }
+        .card-curso-item{
+            padding: 20px;
+        }
+        .grid-cursos-detalhes{
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+    }
